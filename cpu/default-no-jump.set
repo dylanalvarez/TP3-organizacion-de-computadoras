@@ -6,6 +6,7 @@
 	},
 	"instructions": {
 		"nop":  {"type": "R", "fields": {"op": 0, "rs": 0, "rt": 0, "rd": 0, "shamt": 0, "func": 0}},
+		"sll":  {"type": "R", "args": ["reg", "reg", "int"], "fields": {"op": 0, "rs": "#2", "rt": "#3", "rd": "#1", "shamt": "#3", "func": 0}},
 		"add":  {"type": "R", "args": ["reg", "reg", "reg"], "fields": {"op": 0, "rs": "#2", "rt": "#3", "rd": "#1", "shamt": 0, "func": 32}, "desc": "$t1 = $t2 + $t3"},
 		"sub":  {"type": "R", "args": ["reg", "reg", "reg"], "fields": {"op": 0, "rs": "#2", "rt": "#3", "rd": "#1", "shamt": 0, "func": 34}, "desc": "$t1 = $t2 - $t3"},
 		"and":  {"type": "R", "args": ["reg", "reg", "reg"], "fields": {"op": 0, "rs": "#2", "rt": "#3", "rd": "#1", "shamt": 0, "func": 36}, "desc": "$t1 = $t2 & $t3"},
@@ -48,7 +49,8 @@
 			{"aluop": 2, "func": 36, "out": {"Operation": 0}},
 			{"aluop": 2, "func": 37, "out": {"Operation": 1}},
 			{"aluop": 2, "func": 42, "out": {"Operation": 7}},
-			{"aluop": 2, "func": 39, "out": {"Operation": 12}}
+			{"aluop": 2, "func": 39, "out": {"Operation": 12}},
+  			{"aluop": 2, "func": 0,  "out": {"Operation": 13}}
 		],
 		"operations": {
 			"0": "and",
@@ -56,7 +58,8 @@
 			"2": "add",
 			"6": "sub",
 			"7": "slt",
-			"12": "nor"
+			"12": "nor",
+			"13": "sll"
 		}
 	}
 }
